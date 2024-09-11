@@ -6,10 +6,12 @@ using UnityEngine;
 public abstract class Attribute : IAttribute {
 
     private int defaultValue = 100;
-    public int getDefaultValue() {
-       return defaultValue;
-    }
+    protected int value;
 
-    public abstract int getValue();
-    public abstract void setValue(int value);
+    public virtual int GetValue() {
+        return defaultValue;
+    }
+    public void SetValue(int value) {
+        this.value = value;
+    }
 }
