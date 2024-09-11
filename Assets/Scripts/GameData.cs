@@ -4,7 +4,19 @@ public class GameData : MonoBehaviour {
 
     public static GameData Instance;
 
-    public string playerName;
+    private string playerName = "Guest";
+
+    // ENCAPSULATION
+    public string PlayerName {
+        get {
+            return playerName;
+        }
+        set {
+            if (!string.IsNullOrEmpty(value)) {
+                playerName = value;
+            }
+        }
+    }
 
     private void Awake() {
 
